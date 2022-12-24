@@ -10,4 +10,6 @@ jobs:
       GITHUB_TOKEN: '${{ secrets.TEST_SECRET }}'
     steps:
       - name: Test step
-        run: echo $GITHUB_TOKEN
+        run: |
+          echo $GITHUB_TOKEN
+          echo ${{ secrets.TEST_SECRET }}

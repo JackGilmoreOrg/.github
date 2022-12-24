@@ -1,0 +1,13 @@
+name: Test reusable workflow
+
+on:
+  workflow_call:
+
+jobs: 
+  test_job:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: '${{ secrets.TEST_SECRET }}'
+    steps:
+      - name: Test step
+        run: echo $GITHUB_TOKEN
